@@ -28,7 +28,7 @@ ReactDOM.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>,
-    document.getElementById('root'),
+    document.getElementById('root')
 );
 
 const devState = {};
@@ -39,7 +39,7 @@ const render = (): void =>
         <React.StrictMode>
             <App />
         </React.StrictMode>,
-        document.querySelector('#root'),
+        document.querySelector('#root')
     );
 // We can use the Loadable.preloadReady() method on the client to preload
 // the loadable components that were included on the page.
