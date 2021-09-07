@@ -32,10 +32,7 @@ ReactDOM.render(
 );
 
 const devState = {};
-const renderMethod = devState
-    ? // $FlowIssue
-      ReactDOM.hydrate
-    : ReactDOM.render;
+const renderMethod = devState ? ReactDOM.hydrate : ReactDOM.render;
 
 const render = (): void =>
     renderMethod(

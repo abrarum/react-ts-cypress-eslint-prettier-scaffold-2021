@@ -1,51 +1,32 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
-        "commonjs": true,
-        "es6": true,
-        "jest": true,
-        "node": true
+        "es2021": true
     },
     "extends": [
-        "airbnb",
-        "plugin:jsx-a11y/strict",
         "plugin:react/recommended",
-        "plugin:compat/recommended",
+        "airbnb",
         "plugin:@typescript-eslint/recommended",
-        "prettier"
+        "plugin:prettier/recommended"
     ],
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
         "ecmaFeatures": {
-            "jsx": true,
-            "modules": true,
-            "experimentalObjectRestSpread": true
-        }
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "jsx-a11y",
-        "prettier",
-        "compat",
-        "react-hooks"
-    ],
+    "plugins": ["react", "@typescript-eslint", "react-hooks"],
     "rules": {
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-filename-extension": [
             "warn",
-            { "extensions": [/*".js", ".jsx",*/ ".tsx"] }
+            {
+                "extensions": [".tsx"]
+            }
         ],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "no-console": "off",
-        "react/prop-types": "off",
-        "prettier/prettier": ["error"],
-        "compat/compat": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -62,8 +43,17 @@
                 "allowExpressions": true
             }
         ],
-        "max-len": ["warn", { "code": 80 }],
-        "import/prefer-default-export": "off"
+        "max-len": [
+            "warn",
+            {
+                "code": 80
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off",
+        "no-console": ["error", { "allow": ["warn", "error"] }]
     },
     "settings": {
         "import/resolver": {
